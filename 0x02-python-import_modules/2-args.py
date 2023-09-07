@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 if __name__ == "__main__":
     import sys
     length = len(sys.argv) - 1
@@ -8,7 +9,5 @@ if __name__ == "__main__":
         print("1 argument:")
     else:
         print("{} arguments:".format(length))
-        n = 1
-        while n <= length:
-            print("{}: {}".format(n, sys.argv[n]))
-            n += 1
+    for n in range(length):
+        print("{}: {}".format(n + 1, sys.argv[n + 1]))
