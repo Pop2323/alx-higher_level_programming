@@ -61,10 +61,15 @@ int is_palindrome(listint_t **head)
 
 	while (second_half && temp)
 	{
-		if (temp->n != second_half->n)
+		if (temp->n == second_half->n)
+		{
+			second_half = second_half->next;
+			temp = temp->next;
+		}
+		else
 			return (0);
-
-		second_half = second_half->next;
-		temp = temp->next;
 	}
-	return (!second_half);
+	if (!second_half)
+		return (1);
+	return (0);
+}
