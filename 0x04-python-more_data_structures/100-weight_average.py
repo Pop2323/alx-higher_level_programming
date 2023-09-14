@@ -5,6 +5,6 @@ def weight_average(my_list=[]):
     set1 = 0
     set2 = 0
     for x, y in my_list:
-        set1 += (x *y)
+        set1 += (x * y)
         set2 += y
     return set1 / set2
