@@ -14,7 +14,7 @@ class Square:
 
     @property
     def size(self):
-        """The size of the sqr"""
+        """The size of the square"""
         return(self.__size)
 
     @size.setter
@@ -51,4 +51,8 @@ class Square:
             for _ in range(self.__position[1]):
                 print()
             for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+                for x in range(self.__position[0]):
+                    print(" ", end="")
+                for x in range(self.__size):
+                    print("#", end="")
+                print()
