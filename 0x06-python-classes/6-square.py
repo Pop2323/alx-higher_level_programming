@@ -34,7 +34,6 @@ class Square:
 
     @position.setter
     def position(self, value):
-        """Setter method for position"""
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(n, int) for n in value) or
@@ -59,4 +58,4 @@ class Square:
                 print(" ", end="")
             for k in range(self.__size):
                 print("#", end="")
-                print("")
+            print("")
