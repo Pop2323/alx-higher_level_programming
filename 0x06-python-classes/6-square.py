@@ -1,10 +1,5 @@
-#!/usr/bin/python3
-
-"""Define a class Square"""
-
-
 class Square:
-    """this defines a sqr by its size and position."""
+    """A Square class that defines a square by its size and position."""
 
     def __init__(self, size=0, position=(0, 0)):
         """Initializer with optional size and position.
@@ -70,20 +65,22 @@ class Square:
         """Returns the area of the square."""
         return self.__size ** 2
 
+
+    def print_res(self):
+        """returns the square as a string with position"""
+        result = ""
+
+        if self.size == 0:
+            return "\n"
+
+        for row in range(self.size + self.position[1]):
+            if row < self.position[1]:
+                result += "\n"
+            else:
+                result += " " * self.position[0] + "#" * self.size + "\n"
+
+        return result
+
     def my_print(self):
-        """Prints the square to stdout using the character '#'.
-
-        If the size of the square is equal to 0, an empty line is printed.
-        """
-
-        if self.__size == 0:
-            print()
-        else:
-            for y in range(self.__position[1]):
-                print()
-            for y in range(self.__size):
-                for x in range(self.__position[0]):
-                    print(" ", end="")
-                for x in range(self.__size):
-                    print("#", end="")
-                print()
+        """print the square in position"""
+        print(self.print_res(), end='')
