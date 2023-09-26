@@ -29,7 +29,7 @@ class Square:
 
     @property
     def position(self):
-        return (self._position)
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -43,7 +43,7 @@ class Square:
 
     def area(self):
         """Public instance method to calculate the area"""
-        return (self.__size ** 2)
+        return (self.__size * self.__size)
 
     def my_print(self):
         """Public instance method to print the square"""
@@ -51,9 +51,11 @@ class Square:
             print("")
             return
 
-        [print("") for n in range(0, self.__position[1])]
-        for n in range(0, self.__size):
-            [print(" ", end="") for p in range(0, self.__position[0])]
-            [print("#", end="") for s in range(0, self.__size)]
+        for n in range(self.__position[1]):
             print("")
-
+            for n in range(self.__size):
+                for j in range(self.__position[0]):
+                    print(" ", end="")
+                    for k in range(self.__size):
+                        print("#", end="")
+                    print("")
