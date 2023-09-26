@@ -4,11 +4,13 @@
 
 
 class Square:
-    """Initializing class Square
+    """Deefine a class Square"""
+
+    def __init__(self, size=0, position=(0, 0)):
+            """Initializing class Square
     Args:
         size: the size of the square
     """
-    def __init__(self, size=0, position=(0, 0)):
         self.size = size
         self.position = position
 
@@ -27,11 +29,11 @@ class Square:
 
     @property
     def position(self):
+        """set the current positio of sqrn"""
         return (self._position)
 
     @position.setter
     def position(self, value):
-        """Setter method for position"""
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(n, int) for n in value) or
