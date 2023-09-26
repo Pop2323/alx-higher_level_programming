@@ -8,7 +8,7 @@ class Square:
 
     def __init__(self, size):
         """Initialize a Square
-        Args: 
+        Args:
             size (int): The size of the square
         """
         self.__size = sizei
