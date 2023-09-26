@@ -8,8 +8,9 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """Initializing class Square
+
         Args:
-            size: the size of the square
+            size (int): the size of the square
         """
         self.size = size
         self.position = position
@@ -43,13 +44,14 @@ class Square:
 
     def area(self):
         """Public instance method to calculate the area"""
-        return (self.__size * self.__size)
+        return (self.__size ** 2)
 
     def my_print(self):
         """Public instance method to print the square"""
         if self.__size == 0:
             print("")
             return
+
         for n in range(self.__position[1]):
             print("")
         for n in range(self.__size):
