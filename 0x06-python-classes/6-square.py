@@ -44,18 +44,16 @@ class Square:
     def area(self):
         """Public instance method to calculate the area"""
         return (self.__size * self.__size)
-
     def my_print(self):
         """Public instance method to print the square"""
         if self.__size == 0:
             print("")
             return
-
         for n in range(self.__position[1]):
             print("")
-            for n in range(self.__size):
-                for j in range(self.__position[0]):
-                    print(" ", end="")
-                    for k in range(self.__size):
-                        print("#", end="")
-                    print("")
+        for n in range(self.__size):
+            for j in range(self.__position[0]):
+                print(" ", end="")
+            for k in range(self.__size):
+                print("#", end="")
+            print("")
