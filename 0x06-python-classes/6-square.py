@@ -7,10 +7,10 @@ class Square:
     """Deefine a class Square"""
 
     def __init__(self, size=0, position=(0, 0)):
-            """Initializing class Square
-    Args:
-        size: the size of the square
-    """
+        """Initializing class Square
+        Args:
+            size: the size of the square
+        """
         self.size = size
         self.position = position
 
