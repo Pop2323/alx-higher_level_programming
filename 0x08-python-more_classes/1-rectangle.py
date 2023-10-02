@@ -8,18 +8,16 @@ class Rectangle:
     """represent Rectangle"""
     def __init__(self, width=0, height=0):
         """Initialize the instance with optional width and height
-        
         Args:
             width: represent the rectangle width
             height: represent the rectangle width
-        
         Raises:
             TypeError: if width and height is not integer
             ValueError: if width and height less than zero
         """
         self.width = width
         self.height = height
-        
+
         @property
         def width(self):
             """Define the property for width"""
@@ -28,12 +26,12 @@ class Rectangle:
         @width.setter
         def width(self, value):
             """Define the setter for width"""
-            if type(value) is not int:
+            if not isinstance(value, int):
                 raise TypeError("width must be an integer")
             if value < 0:
                 raise ValueError("width must be >= 0")
             self.__width = value
-            
+
         @property
         def height(self):
             """Define the property for width"""
