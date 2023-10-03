@@ -30,7 +30,7 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """Define the setter for width"""
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
@@ -38,7 +38,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Define the property for width"""
+        """Define the property for hight"""
         return self.__height
 
     @height.setter
@@ -58,23 +58,21 @@ class Rectangle:
         """return the  rectangle perimeter"""
         if self.__width == 0 or self.__height == 0:
             return (0)
-        else:
-            return 2 * (self.__width + self.__height)
+        return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self) -> str:
         if self.__width == 0 or self.__height == 0:
-            return ""
-        else:
-            shape = ""
-            for h in range(self.__height):
-                for w in range(self.__width):
-                    try:
-                        shape += str(self.print_symbol)
-                    except TypeError:
-                        shape += type(self.print_symbol).__name__
-                if h < self.__height -1:
-                    shape += "\n"
-            return shape
+            return ("")
+        shape = ""
+        for column in range(self.__height):
+            for row in range(self.__width):
+                try:
+                    shape += str(self.print_symbol)
+                except Exception:
+                    shape += type(self).print_symbol
+            if column < self.__height - 1:
+                shape += "\n"
+        return (shape)
 
     def __repr__(self):
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
@@ -96,4 +94,4 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        return(size, size)
+        return Rectangle(size, size)
