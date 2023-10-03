@@ -58,18 +58,18 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return (0)
         else:
-            return 2 * (self.__width + self.__height)
+            return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self) -> str:
         if self.__width == 0 or self.__height == 0:
-            return ""
+            return ("")
         shape = ""
         for h in range(self.__height):
             for w in range(self.__width):
                 shape += "#"
             if h < self.__height - 1:
                 shape += "\n"
-        return shape
+        return (shape)
 
     def __repr__(self):
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
