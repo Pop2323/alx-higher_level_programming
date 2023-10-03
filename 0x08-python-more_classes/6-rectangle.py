@@ -67,9 +67,9 @@ class Rectangle:
         for h in range(self.__height):
             for w in range(self.__width):
                 shape += "#"
-                if h < self.__height -1:
-                    shape += "\n"
-            return (shape)
+            if h < self.__height - 1:
+                shape += "\n"
+        return shape
 
     def __repr__(self):
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
