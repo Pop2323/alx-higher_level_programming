@@ -72,7 +72,7 @@ class Rectangle:
                         shape += str(self.print_symbol)
                     except TypeError:
                         shape += type(self.print_symbol).__name__
-                if h < self.__height -1:
+                if h < self.__height - 1:
                     shape += "\n"
             return shape
 
