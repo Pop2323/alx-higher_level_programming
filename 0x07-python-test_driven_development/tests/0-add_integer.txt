@@ -1,0 +1,83 @@
+"""
+Test cases for add_integer function test integer, float value and so on
+"""
+
+from your_module import add_integer
+import unittest
+import math
+
+class TestAddInteger(unittest.TestCase):
+
+    def test_add_positive_integers(self):
+        self.assertEqual(add_integer(1, 1), 2)
+
+    def test_add_positive_and_negative_integers(self):
+        self.assertEqual(add_integer(10, -4), 6)
+
+    def test_add_negative_integers(self):
+        self.assertEqual(add_integer(-10, -4), -14)
+
+    def test_add_integer_with_default_b(self):
+        self.assertEqual(add_integer(2), 100)
+
+    def test_add_positive_float_and_positive_integer(self):
+        self.assertEqual(add_integer(2.5, 5), 7)
+
+    def test_add_float_and_integer_with_default_b(self):
+        self.assertEqual(add_integer(2.5), 100)
+
+    def test_add_positive_float_and_negative_integer(self):
+        self.assertEqual(add_integer(10.5, -2), 8)
+
+    def test_add_negative_floats(self):
+        self.assertEqual(add_integer(-10.5, -2), -12)
+
+    def test_add_integer_and_string(self):
+        with self.assertRaises(TypeError):
+            add_integer(4, "School")
+
+    def test_add_no_argument(self):
+        with self.assertRaises(TypeError):
+            add_integer(None)
+
+    def test_add_letter_and_number(self):
+        with self.assertRaises(TypeError):
+            add_integer('c', 1)
+
+    def test_add_two_letters(self):
+        with self.assertRaises(TypeError):
+            add_integer('c', 'm')
+
+    def test_add_tuple(self):
+        with self.assertRaises(TypeError):
+            add_integer((1, 1))
+
+    def test_add_number_and_list(self):
+        with self.assertRaises(TypeError):
+            add_integer(123, [])
+
+    def test_add_only_one_string(self):
+        with self.assertRaises(TypeError):
+            add_integer("Hello")
+
+    def test_add_two_float_numbers(self):
+        self.assertEqual(add_integer(1.2, 4.2), 5)
+
+    def test_overflow_case_1(self):
+        with self.assertRaises(OverflowError):
+            add_integer(float('inf'), 0)
+
+    def test_overflow_case_2(self):
+        with self.assertRaises(OverflowError):
+            add_integer(float('inf'), float('-inf'))
+
+    def test_nan_case_1(self):
+        with self.assertRaises(ValueError):
+            add_integer(0, float('nan'))
+
+    def test_nan_case_2(self):
+        with self.assertRaises(ValueError):
+            add_integer(float('nan'))
+
+if __name__ == '__main__':
+    unittest.main()
