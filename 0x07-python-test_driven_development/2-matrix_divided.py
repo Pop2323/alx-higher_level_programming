@@ -5,6 +5,7 @@ This module defines a matrix division function
 
 """
 
+
 def matrix_divided(matrix, div):
     """
     Divide each element in a matrix by a divisor.
@@ -12,10 +13,8 @@ def matrix_divided(matrix, div):
     Args:
         matrix (list of lists): Matrix of integers or floats.
         div (int or float): Divisor.
-
     Returns:
         list of lists: New matrix with elements rounded to two decimal places.
-
     Raises:
         TypeError: If the matrix is not a list of lists of integers/floats,
         TypeError: If rows have different sizes, or if div is not a number.
