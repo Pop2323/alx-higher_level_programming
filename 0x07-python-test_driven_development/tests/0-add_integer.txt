@@ -1,83 +1,113 @@
 """
-Test cases for add_integer function test integer, float value and so on
+Usage
+=====
+
+Importing function from the module:
+    >>> custom_add = __import__('your_module').add_integer
+
+Adding two positive numbers (a = 3 and b = 4)
+    >>> custom_add(3, 4)
+    7
+
+Adding one positive and one negative number (a = 10 and b = -2)
+    >>> custom_add(10, -2)
+    8
+
+Adding two negative numbers (a = -8 and b = -6)
+    >>> custom_add(-8, -6)
+    -14
+
+Adding two numbers with the second being the same as the default value of b (a = 5 and b = 98)
+    >>> custom_add(5)
+    103
+
+Adding a positive float and a positive integer (a = 2.5 and b = 5)
+    >>> custom_add(2.5, 5)
+    7
+
+Adding a float and an integer where the integer is equal to the default value of b (a = 2.5 and b = 98)
+    >>> custom_add(2.5)
+    100
+
+Adding a positive float and a negative integer (a = 7.5 and b = -3)
+    >>> custom_add(7.5, -3)
+    4
+
+Adding two negative floats (a = -5.5 and b = -1.5)
+    >>> custom_add(-5.5, -1.5)
+    -7
+
+Adding a number and a string (a = 4 and b = "Python")
+    >>> custom_add(4, "Python")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Passing no argument to the function
+    >>> custom_add(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding a letter and a number (a = 'X' and b = 1)
+    >>> custom_add('X', 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding two letters (a = 'A' and b = 'B')
+    >>> custom_add('A', 'B')
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding a tuple
+    >>> custom_add((2, 3))
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding a number and an empty list
+    >>> custom_add(123, [])
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Passing only one string
+    >>> custom_add("Hello")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Adding two decimal numbers (a = 1.5 and b = 3.25)
+    >>> custom_add(1.5, 3.25)
+    4
+
+Case Overflow:
+
+    >>> custom_add(float('inf'), 0)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Case Overflow 2:
+
+    >>> custom_add(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Case NaN 1:
+
+    >>> custom_add(0, float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Case NaN 2:
+
+    >>> custom_add(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
 """
-
-from your_module import add_integer
-import unittest
-import math
-
-class TestAddInteger(unittest.TestCase):
-
-    def test_add_positive_integers(self):
-        self.assertEqual(add_integer(1, 1), 2)
-
-    def test_add_positive_and_negative_integers(self):
-        self.assertEqual(add_integer(10, -4), 6)
-
-    def test_add_negative_integers(self):
-        self.assertEqual(add_integer(-10, -4), -14)
-
-    def test_add_integer_with_default_b(self):
-        self.assertEqual(add_integer(2), 100)
-
-    def test_add_positive_float_and_positive_integer(self):
-        self.assertEqual(add_integer(2.5, 5), 7)
-
-    def test_add_float_and_integer_with_default_b(self):
-        self.assertEqual(add_integer(2.5), 100)
-
-    def test_add_positive_float_and_negative_integer(self):
-        self.assertEqual(add_integer(10.5, -2), 8)
-
-    def test_add_negative_floats(self):
-        self.assertEqual(add_integer(-10.5, -2), -12)
-
-    def test_add_integer_and_string(self):
-        with self.assertRaises(TypeError):
-            add_integer(4, "School")
-
-    def test_add_no_argument(self):
-        with self.assertRaises(TypeError):
-            add_integer(None)
-
-    def test_add_letter_and_number(self):
-        with self.assertRaises(TypeError):
-            add_integer('c', 1)
-
-    def test_add_two_letters(self):
-        with self.assertRaises(TypeError):
-            add_integer('c', 'm')
-
-    def test_add_tuple(self):
-        with self.assertRaises(TypeError):
-            add_integer((1, 1))
-
-    def test_add_number_and_list(self):
-        with self.assertRaises(TypeError):
-            add_integer(123, [])
-
-    def test_add_only_one_string(self):
-        with self.assertRaises(TypeError):
-            add_integer("Hello")
-
-    def test_add_two_float_numbers(self):
-        self.assertEqual(add_integer(1.2, 4.2), 5)
-
-    def test_overflow_case_1(self):
-        with self.assertRaises(OverflowError):
-            add_integer(float('inf'), 0)
-
-    def test_overflow_case_2(self):
-        with self.assertRaises(OverflowError):
-            add_integer(float('inf'), float('-inf'))
-
-    def test_nan_case_1(self):
-        with self.assertRaises(ValueError):
-            add_integer(0, float('nan'))
-
-    def test_nan_case_2(self):
-        with self.assertRaises(ValueError):
-            add_integer(float('nan'))
-
-if __name__ == '__main__':
-    unittest.main()
