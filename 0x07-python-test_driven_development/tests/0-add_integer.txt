@@ -7,7 +7,7 @@ Usage
 =====
 
 Importing function from the module:
-    >>> custom_add = __import__('your_module').add_integer
+    >>> add_integer = __import__('0-add_integer').add_integer
 
 Adding two positive numbers (a = 3 and b = 4)
     >>> custom_add(3, 4)
