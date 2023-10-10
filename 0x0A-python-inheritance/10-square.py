@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-""" inherit from rectangle """
-Rectangle = __import__('9-rectangle.py').Rectangle
+# Import the Rectangle class from the correct module
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
@@ -10,4 +10,4 @@ class Square(Rectangle):
         """Intialize new square"""
         self.integer_validator("size", size)
         super().__init__(size, size)
-        size.__size = size
+        self.__size = size  # Assign the size to the instance attribute
