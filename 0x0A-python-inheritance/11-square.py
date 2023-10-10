@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
 """ inherit from rectangle """
-Rectangle = __import__('9-rectangle.py').Rectangle
+from 9-rectangle import Rectangle
 
 
 class Square(Rectangle):
-
     """Define the square"""
     def __init__(self, size):
         """
@@ -18,4 +17,4 @@ class Square(Rectangle):
         """
         self.integer_validator("size", size)
         super().__init__(size, size)
-        size.__size = size
+        self.__size = size
