@@ -5,6 +5,9 @@
 
 
 class BaseGeometry:
+
+    """class represents a base geometry"""
+
     def area(self):
         """
         Raises an Exception with the message "area() is not implemented."
@@ -21,7 +24,7 @@ class BaseGeometry:
         - TypeError: If the value is not an integer.
         - ValueError: If the value is less than or equal to 0.
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
