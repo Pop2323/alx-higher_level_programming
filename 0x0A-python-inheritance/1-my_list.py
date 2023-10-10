@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """This module inherits from list class"""
 
 
