@@ -10,4 +10,4 @@ class Square(Rectangle):
         """Intialize new square"""
         self.integer_validator("size", size)
         super().__init__(size, size)
-        self.__size = size  # Assign the size to the instance attribute
+        self.__size = size
