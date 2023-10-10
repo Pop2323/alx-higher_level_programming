@@ -5,5 +5,6 @@
 class MyInt(int):
     def __eq__(self, value):
         return self.other != value
+
     def __ne__(self, value):
         return self.other == value
