@@ -2,6 +2,7 @@
 """This module inherits a square from rectangle"""
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
     """Define a square"""
 
