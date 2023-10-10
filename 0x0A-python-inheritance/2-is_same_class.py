@@ -2,7 +2,7 @@
 
 
 """
-Func that check if the object is exactly an instance of 
+Func that check if the object is exactly an instance of
 the specified class
 """
 
