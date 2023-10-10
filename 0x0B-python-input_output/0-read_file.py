@@ -5,4 +5,4 @@
 def read_file(filename=""):
     """print the contant of the filename"""
     with open(filename, encoding="UTF8") as f:
-        print(f.read, end="")
+        print(f.read(), end="")
