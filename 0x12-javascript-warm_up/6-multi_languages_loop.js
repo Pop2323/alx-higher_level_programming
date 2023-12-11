@@ -2,6 +2,6 @@
 
 const myVar = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-myVar.forEach ((e) => {
-    console.log(e);
+myVar.forEach((e) => {
+  console.log(e);
 });
