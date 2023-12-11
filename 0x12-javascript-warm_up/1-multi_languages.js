@@ -7,5 +7,5 @@
 // console.log(second);
 // console.log(thired);
 
-const myVar = "C is fun\nPython is cool\nJavaScript is amazing";
+const myVar = 'C is fun\nPython is cool\nJavaScript is amazing';
 console.log(myVar);
