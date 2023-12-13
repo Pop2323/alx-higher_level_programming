@@ -7,8 +7,8 @@ class Square extends PreSquare {
     if (c) {
       let res = '';
       for (let i = 0; i < this.height; i++) {
-        for (let y = 0; y < this.width; y++) {
-          res = res + 'X';
+        for (let j = 0; j < this.width; j++) {
+          res = res + c;
         }
         console.log(res);
         res = '';

@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 exports.logMe = function (item) {
-  let count = 0; // Declare count as a local variable
+  let count = 0;
   console.log(`${count} : ${item}`);
-  count++;
+  count += 1;
 };
