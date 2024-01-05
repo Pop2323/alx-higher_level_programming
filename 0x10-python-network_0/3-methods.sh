@@ -1,3 +1,3 @@
 #!/bin/bash
 # write a Bash script that takes in a URL and displays all HTTP
-curl -sI | grep "Allow" | cut -d " " -f 2-
+curl -sI "$1" | grep "Allow" | cut -d " " -f 2-
