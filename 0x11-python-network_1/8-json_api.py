@@ -11,14 +11,14 @@ if __name__ == "__main__":
         q = ""
     else:
         q = sys.argv[1]
-    url = "http://0.0.0.0:5000/search_user"
-    data = {"q": q}
-    try:
-        res = requests.post(url, data=data)
-        json_data = res.json()
-        if json_data:
-            print("[{}] {}".format(json_data.get("id"), json_data.get("name")))
-        else:
-            print("No result")
-    except:
-        print("Not a valid JSON")
+        url = "http://0.0.0.0:5000/search_user"
+        data = {"q": q}
+        req = requests.post("http://0.0.0.0:5000/search_user", data=q)
+        try:
+            response = req.json()
+            if response == {}:
+                print("No result")
+            else:
+                print("[{}] {}".format(response.get("id"), response.get("name")))
+        except ValueError:
+            print("Not a valid JSON")
